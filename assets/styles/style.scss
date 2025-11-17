@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import 'variables.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+h2 {
+    @include gradient-text;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .box-header {
+        background: $bg-gradient;
+        box-shadow: 5px 5px 20px $text-color;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        margin-top: 20px;
+        padding: 0.5rem 0.1rem;
+        border-radius: 50px;
+        color: $navbar-text-color;
+
+        img {
+            width: 90%;
+            margin: 0 1.5rem;
+        }
+        
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 0 1.5rem;
+            width: 60%;
+            
+
+            a {
+                width: 82px;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 0.7rem;
+                color: $navbar-text-color;
+                font-weight: 400;
+            }
+
+            a:hover {
+                color: $text-color;                
+            }
+        }
+
+        @media (min-width: 480px) {
+            img {
+                width: 70%;
+            }
+
+            .menu {
+                width: 60%;
+
+                a {
+                    width: auto;
+                    white-space: normal;
+                    overflow: visible;
+                    font-size: 1.2rem;
+                    color: $navbar-text-color;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        
+    }
+    
+    @media (min-width: 900px) {
+        @include bg-header;
+        height: 70vh;
+    }
+}
+
+.box-banner {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .box-title {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 30px 0;
+        
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            margin: 0.8rem 0;
+            font-size: 1.5rem;
+            color: $text-color;
+        }
+    }
+
+    @media (min-width: 501px) {
+        .box-title {
+            h2 {
+                font-size: 3.8rem;
+            }
+
+            p {
+                font-size: 1.9rem;
+            }
+        }
+    }
+
+    @media (min-width: 900px) {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: start;
+
+        .box-title {
+            width: 50vw;
+            text-align: left;
+            
+            h2 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 2rem;
+            }
+        }
+
+    }
+}
+
+.box-buttons {
+    border: green 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    button {
+        padding: 1.2rem 1rem;
+        border-radius: 12px;
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+
+    .bnt-primary {
+        background-color: $primary-color;
+        color: $navbar-text-color;
+        border: 1px solid $primary-color;
+    }
+    
+    .bnt-secondary {
+        color: $primary-color;
+        border: 1px solid $primary-color;
+    }
+    
+    .bnt-primary:hover {
+        border: 1px solid $secondary-color;
+        background-color: $secondary-color;
+        color: $navbar-text-color;
+    }
+    
+    .bnt-secondary:hover {
+        border: 1px solid $secondary-color;
+        color: $secondary-color;
+    }
+
+    @media (min-width: 900px) {
+        justify-content: start;
+        align-items: start;
+
+        button {
+            font-size: 1.5rem;
+            padding: 1.2rem 3rem;
+        }
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    width: 90%;
+    margin: 2rem auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+
+    h2 {
+        @include title-section;
+    }
+
+    @media (min-width: 480px) {
+        width: 80%;
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.box-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+
+    .box-info {
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        background-color: $navbar-text-color;
+        
+        padding: 1rem;
+        border-radius: 12px;
+        @include box-shadow;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 20px $primary-color;
+        }
+
+        img {
+            width: 48px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        h3 {
+            color: $primary-color;
+        }
+
+        p {
+            color: $text-color;
+        }
+    }
+
+    @media (min-width: 480px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;        
+        gap: 1.5rem;
+
+        .box-info {
+            width: 200px;
+
+            img {
+                width: 60px;
+            }
+
+            p {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    @media (min-width: 900px) {
+        width: 90%;
+        justify-content: space-between;
+        gap: 2rem;
+        
+        .box-info {
+            width: 30%;
+
+            img {
+                width: 70px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+#prevFem {
+    background: #FDEFEF;
+
+    h2 {
+        @include gradient-text-fem;
+        @include title-section;
+    }
+
+    .box-prev {
+        &:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 18px #d038aac1;
+        }
+    }
+
+}
+
+#prevMas {
+    background: #F8F9FA;
+
+    h2 {
+        @include gradient-text-mas;
+        @include title-section;
+    }
+
+    .box-prev {
+        &:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 18px #0074ee;
+        }
+    }
+}
+
+.fem, .masc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 3rem 0;
+    
+    .box-prevs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2.5rem;
+
+        .box-prev {
+            @include boxPrev;
+        }
+
+        @media (min-width: 480px) {
+            width: 80%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+    }
+
+    @media (min-width: 900px) {
+        
+        justify-content: center;
+        gap: 2rem;
+
+        .box-prev {
+            margin: 2rem 1rem;
+        }
+    }
+}
+
+.alerts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    
+    h2 {
+        @include title-section;
+    }
+
+    .box-pink {
+        background: #F9D5E5;
+        color: #AD346A;
+    }
+
+    .box-blue {
+        background: #CFE2F3;
+        color: #2769A3;
+    }
+
+    .box-green {
+        background: #D4EDDA;
+        color: #244A2D;
+    }
+
+    .box-yellow {
+        background: #FFE9C2;
+        color: #976C00;
+    }
+    
+    @media (min-width: 480px) {
+        width: 90%;
+
+    }
+}
+
+.box-alerts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    .box-alert {
+        @include box-shadow;
+        width: 350px;
+        border-radius: 10px;
+        padding: 1rem;
+        text-align: center;
+
+        .box-title-alert {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+
+            img {
+                width: 34px;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    @media (min-width: 480px) {
+        width: 80%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+footer {
+    background-color: #313461;
+    color: $navbar-text-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    text-align: center;
+    width: 85%;
+
+    a {
+        color: $navbar-text-color;
+    }
+
+    a:hover {
+        color: $secondary-color;
+    }
+
+    h4 {
+        font-weight: 700;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    @media (min-width: 480px){
+        flex-direction: row;
+        justify-content: space-around;
+
+        .links {
+            width: 600px;
+        }
+    }
+}
+
+.footer-copy {
+    width: 100%;
+    border-top: $navbar-text-color solid 2px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        width: 80%;
+        text-align: center;
+    }
+}
