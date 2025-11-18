@@ -79,13 +79,12 @@ header {
                 }
             }
         }
-
         
     }
     
     @media (min-width: 900px) {
         @include bg-header;
-        height: 70vh;
+        height: 95vh;
     }
 }
 
