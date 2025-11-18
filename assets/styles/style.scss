@@ -18,6 +18,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 40px 0;
 
     .box-header {
         background: $bg-gradient;
@@ -120,21 +121,21 @@ header {
             h2 {
                 font-size: 3.8rem;
             }
-
+            
             p {
                 font-size: 1.9rem;
             }
         }
     }
-
+    
     @media (min-width: 900px) {
         display: flex;
         flex-direction: column;
-        text-align: left;
-        align-items: start;
-
+        align-items: flex-start;
+        
         .box-title {
             width: 50vw;
+            align-items: flex-start;
             text-align: left;
             
             h2 {
@@ -160,6 +161,7 @@ header {
         border-radius: 12px;
         font-size: 0.7rem;
         font-weight: 500;
+        cursor: pointer;
     }
 
     .bnt-primary {
@@ -306,6 +308,7 @@ main {
 
 #prevFem {
     background: #FDEFEF;
+    width: 100%;
 
     h2 {
         @include gradient-text-fem;
@@ -324,6 +327,7 @@ main {
 
 #prevMas {
     background: #F8F9FA;
+    width: 100%;
 
     h2 {
         @include gradient-text-mas;
