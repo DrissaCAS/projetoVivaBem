@@ -17,4 +17,4 @@ Este projeto faz parte da Formação Empower Fullstack da Vai Na Web com os inst
 - Trabalhar com resposividade
 
 ## 🌐 Deploy
-**🔗 Acesse aqui: [Projeto Viva Bem](https://drissacas.github.io/projetoVivaBem/)**
+**🔗 Acesse aqui: [Projeto Viva Bem](https://drissacas.github.io/projeto-viva-bem/)**
